@@ -2,7 +2,7 @@
 
 Private Repository for HW assignments of Stat 133 (Spring 2019)
 
-- Name: Zhe Chen (first last)
+- Name: Zhe Chen 
 - Github username: Zhe-Chen-karen
 - Email: handle0102@berkeley.edu
 - Lab section: 111
