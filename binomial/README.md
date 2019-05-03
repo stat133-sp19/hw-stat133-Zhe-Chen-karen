@@ -20,7 +20,7 @@ Install the development version from GitHub via the package "devtools":
 #devtools::install_github("stat133-sp19/hw-stat133-Zhe-Chen-karen/binomial")
 
 # install "cointoss" (with vignettes)
-#devtools::install_github("stat133-sp19/hw-stat133-Zhe-Chen-karen", build_vignettes = TRUE)
+#devtools::install_github("stat133-sp19/hw-stat133-Zhe-Chen-karen/binomial", build_vignettes = TRUE)
 ```
 
 Main functions
