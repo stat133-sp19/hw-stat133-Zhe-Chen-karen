@@ -1,0 +1,105 @@
+---
+title: "Getting Started With Binomial Package"
+author: "Zhe Chen"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Introduction to binomial}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, echo=FALSE, message=FALSE}
+knitr::opts_chunk$set(collapse = T,comment = "#>")
+library(binomial)
+```
+
+## Binomial
+
+The package "binomial" is an implementation for computing the probability of a binomial random variable, summarizing its related statistics and visualizing the probability distribution and cumulative probability distribution.
+
+## Functions of measure
+
+You can use the following functions to get the mean, variance, mode, skewness and kurtosis of a binomial distribution with specified trials and probability.
+
+```{r}
+#mean
+bin_mean(10, 0.3)
+#variance
+bin_variance(10, 0.3)
+#mode
+bin_mode(10, 0.3)
+#skewness
+bin_skewness(10, 0.3)
+#kurtosis
+bin_kurtosis(10, 0.3)
+```
+
+## Function bin_choose()
+
+You can use function bin_choose() to compute the number of combinations in which k successes can occur in n trials.
+
+```{r}
+bin_choose(n = 5, k = 2)
+```
+
+## Function bin_probability()
+
+You can use function bin_probability() to compute the probability of getting k successes in n trials with specific probability of success.
+
+```{r}
+bin_probability(success=3,trials=5,prob=0.5)
+```
+
+## Creating a binomial random variable object
+
+The function bin_variable() gives you an object of class "binvar", that is, a binomial random variable object.
+
+```{r}
+bin1<-bin_variable(trials=5,prob=0.5)
+bin1
+```
+
+## Show the summary of binomial variable
+
+Function `summary()` gives you a summary of parameters and measures of a binomial variable object.
+
+```{r}
+summary(bin1)
+```
+
+## Show the table of binomial distribution
+
+You can use the function bin_distribution() to show a table of binomial distribution, where the first column is sucesses and the second column is probability.
+
+```{r}
+dist1=bin_distribution(trials=5,prob=0.5)
+dist1
+```
+
+##Show the table of cumulative distribution
+
+You can use the function bin_cumulative() to return a data frame with both the probability distribution and the cumulative probabilities (sucesses in the first column, probability in the second column, and cumulative in the third column).
+
+```{r}
+dist2=bin_cumulative(trials=5,prob=0.5)
+dist2
+```
+
+## Plotting binomial distribution
+
+Method plot.bindis() shows the barplot to display the probability histogram of a binomial distribution object "bindis".
+
+```{r}
+# plotting binomial probability distribution
+dist1=bin_distribution(trials=5,prob=0.5)
+plot(dist1)
+```
+
+Method plot.bincum() shows the plot of cumulative distribution in an object "bincum".
+
+```{r}
+# plotting binomial cumulative distribution
+dist2 <- bin_cumulative(trials = 5, prob = 0.5)
+plot(dist2)
+```
